@@ -58,7 +58,7 @@ export function Todos({}: PropsWithChildren) {
       <h2>Total Todos: {todoCount}</h2>
       {todos.map((todo) => (
         <li>
-          <button onClick={() => toggleCompleted(todo.id)}>
+          <button onClick={toggleCompleted(todo.id)}>
             {todo.title}: {todo.completed}
           </button>
         </li>
