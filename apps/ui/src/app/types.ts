@@ -15,10 +15,8 @@ type RefinedData<T extends Record<PropertyKey, unknown>> = T & { id: number };
 // ----------- Question 3 -----------
 // What does this type do?
 type UtilType<
-  TYPE extends Record<PropertyKey, any>, // any object
-  KEYS extends keyof TYPE // keys of that object
+  TYPE extends Record<PropertyKey, any>,
+  KEYS extends keyof TYPE
 > = {
-  // Omit<> the keys passed in, leaving the rest
-  // Intersect the Partial<> of the keys passed in
   [Key in keyof (Omit<TYPE, KEYS> & Partial<Pick<TYPE, KEYS>>)]: TYPE[Key];
 };
