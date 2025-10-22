@@ -14,7 +14,7 @@ type RefinedData<T extends Record<PropertyKey, unknown>> = T & { id: number };
 
 // ----------- Question 3 -----------
 // What does this type do?
-type PartialByKeys<
+type UtilType<
   TYPE extends Record<PropertyKey, any>, // any object
   KEYS extends keyof TYPE // keys of that object
 > = {
